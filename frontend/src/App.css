@@ -1,0 +1,3397 @@
+/* =========================================================
+   STUDENT ASSESSMENT
+========================================================= */
+
+.assessment-intro {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding: 28px;
+
+    margin-bottom: 22px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(31,37,58,.78),
+            rgba(18,22,35,.72)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+}
+
+
+.assessment-intro h2 {
+
+    font-size: 22px;
+
+    letter-spacing: -.7px;
+
+    margin-bottom: 7px;
+}
+
+
+.assessment-intro p {
+
+    max-width: 650px;
+
+    color: #737d94;
+
+    font-size: 12px;
+
+    line-height: 1.65;
+}
+
+
+.assessment-counter {
+
+    min-width: 125px;
+
+    padding: 17px;
+
+    border-radius: 13px;
+
+    background:
+        rgba(91,105,247,.08);
+
+    border:
+        1px solid
+        rgba(91,105,247,.14);
+
+    text-align: center;
+}
+
+
+.assessment-counter strong {
+
+    display: block;
+
+    color: #7d8cff;
+
+    font-size: 24px;
+}
+
+
+.assessment-counter span {
+
+    color: #68738b;
+
+    font-size: 9px;
+}
+
+
+.assessment-error {
+
+    margin-bottom: 18px;
+
+    padding: 13px 16px;
+
+    border-radius: 11px;
+
+    color: #ffb4b4;
+
+    background:
+        rgba(220,60,60,.08);
+
+    border:
+        1px solid
+        rgba(220,60,60,.14);
+
+    font-size: 11px;
+}
+
+
+.assessment-question-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+}
+
+
+.assessment-question {
+
+    padding: 26px;
+}
+
+
+.question-number {
+
+    color: #6575e8;
+
+    font-size: 9px;
+
+    font-weight: 750;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 12px;
+}
+
+
+.assessment-question h3 {
+
+    max-width: 900px;
+
+    color: #e6e9f3;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    line-height: 1.55;
+
+    margin-bottom: 20px;
+}
+
+
+.question-options {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 10px;
+}
+
+
+.question-option {
+
+    min-height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 10px 13px;
+
+    border-radius: 11px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+
+    background:
+        rgba(39,44,61,.38);
+
+    color: #aeb6c9;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: .18s ease;
+}
+
+
+.question-option:hover {
+
+    border-color:
+        rgba(105,122,255,.25);
+
+    background:
+        rgba(65,72,101,.40);
+}
+
+
+.question-option.selected {
+
+    border-color:
+        rgba(103,120,255,.55);
+
+    background:
+        rgba(91,105,247,.13);
+
+    color: #eef0fa;
+
+    box-shadow:
+        inset 3px 0 0
+        #6375ff;
+}
+
+
+.option-letter {
+
+    width: 30px;
+
+    height: 30px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background:
+        rgba(255,255,255,.05);
+
+    color: #7e89a5;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+.question-option.selected
+.option-letter {
+
+    background:
+        rgba(99,117,255,.18);
+
+    color: #8291ff;
+}
+
+
+.option-text {
+
+    flex: 1;
+
+    font-size: 11px;
+
+    line-height: 1.45;
+}
+
+
+.option-check {
+
+    width: 20px;
+
+    color: #7182ff;
+
+    font-weight: 800;
+}
+
+
+.question-skill {
+
+    margin-top: 17px;
+
+    color: #5e687f;
+
+    font-size: 9px;
+}
+
+
+.question-skill strong {
+
+    color: #7e89a4;
+
+    margin-left: 5px;
+}
+
+
+.assessment-submit-area {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-top: 20px;
+
+    padding: 20px 23px;
+
+    border-radius: 15px;
+
+    background:
+        rgba(29,34,51,.70);
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+}
+
+
+.assessment-submit-area > div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.assessment-submit-area strong {
+
+    color: #dce1ed;
+
+    font-size: 12px;
+}
+
+
+.assessment-submit-area span {
+
+    color: #69738b;
+
+    font-size: 10px;
+}
+
+
+.assessment-submit-button {
+
+    min-width: 180px;
+}
+
+
+/* =========================================================
+   ASSESSMENT RESULTS
+========================================================= */
+
+.assessment-result-hero {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 32px;
+
+    margin-bottom: 20px;
+
+    border-radius: 19px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(38,45,72,.80),
+            rgba(20,25,39,.78)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+}
+
+
+.result-circle {
+
+    width: 125px;
+
+    height: 125px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(89,106,255,.18),
+            rgba(89,106,255,.04)
+        );
+
+    border:
+        1px solid
+        rgba(105,122,255,.32);
+
+    box-shadow:
+        0 0 40px
+        rgba(81,99,239,.12);
+}
+
+
+.result-circle strong {
+
+    color: #8190ff;
+
+    font-size: 29px;
+
+    letter-spacing: -1px;
+}
+
+
+.result-circle span {
+
+    color: #68738b;
+
+    font-size: 9px;
+
+    margin-top: 3px;
+}
+
+
+.result-copy h2 {
+
+    color: #e8ebf4;
+
+    font-size: 22px;
+
+    letter-spacing: -.7px;
+
+    margin-bottom: 8px;
+}
+
+
+.result-copy p {
+
+    max-width: 600px;
+
+    color: #737d94;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+.proficiency-label {
+
+    margin-top: 8px;
+
+    color: #59647c;
+
+    font-size: 9px;
+}
+
+
+.proficiency-label strong {
+
+    color: #7785ff;
+
+    margin-left: 4px;
+}
+
+
+.assessment-result-actions {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 18px;
+}
+
+
+/* =========================================================
+   SKILL PROFILE
+========================================================= */
+
+.profile-summary {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 23px 25px;
+
+    margin-bottom: 20px;
+
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(31,37,58,.78),
+            rgba(19,23,36,.72)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+}
+
+
+.profile-score {
+
+    min-width: 130px;
+}
+
+
+.profile-score-number {
+
+    color: #8290ff;
+
+    font-size: 30px;
+
+    font-weight: 750;
+
+    letter-spacing: -1.2px;
+}
+
+
+.profile-score-label {
+
+    color: #68738b;
+
+    font-size: 9px;
+
+    margin-top: 3px;
+}
+
+
+.profile-summary-divider {
+
+    width: 1px;
+
+    height: 43px;
+
+    background:
+        rgba(255,255,255,.08);
+}
+
+
+.profile-summary-stat {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    min-width: 90px;
+}
+
+
+.profile-summary-stat strong {
+
+    color: #e2e5ef;
+
+    font-size: 19px;
+}
+
+
+.profile-summary-stat span {
+
+    color: #68738b;
+
+    font-size: 9px;
+}
+
+
+.profile-summary .primary-button {
+
+    margin-left: auto;
+}
+
+
+.full-skill-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap: 12px;
+}
+
+
+.profile-skill-card {
+
+    padding: 17px;
+
+    border-radius: 13px;
+
+    background:
+        rgba(38,43,59,.38);
+
+    border:
+        1px solid
+        rgba(255,255,255,.055);
+}
+
+
+.profile-skill-top {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.profile-skill-icon {
+
+    width: 36px;
+
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background:
+        rgba(91,105,247,.10);
+
+    color: #7484ff;
+}
+
+
+.profile-skill-top div:last-child {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+
+.profile-skill-top strong {
+
+    color: #cdd3e1;
+
+    font-size: 11px;
+}
+
+
+.profile-skill-top span {
+
+    color: #68738a;
+
+    font-size: 9px;
+}
+
+
+.profile-skill-score {
+
+    margin:
+        15px 0 8px;
+
+    color: #e3e6ef;
+
+    font-size: 21px;
+
+    font-weight: 700;
+}
+
+
+.proficiency-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 8px;
+
+    color: #59637b;
+
+    font-size: 9px;
+}
+
+
+.proficiency-row strong {
+
+    color: #7584ff;
+}
+
+
+/* =========================================================
+   OPPORTUNITIES
+========================================================= */
+
+.opportunities-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom: 20px;
+}
+
+
+.opportunities-heading h2 {
+
+    color: #e8ebf4;
+
+    font-size: 22px;
+
+    letter-spacing: -.7px;
+
+    margin-bottom: 6px;
+}
+
+
+.opportunities-heading p {
+
+    color: #707a91;
+
+    font-size: 11px;
+
+    line-height: 1.55;
+
+    max-width: 650px;
+}
+
+
+.opportunity-count {
+
+    min-width: 100px;
+
+    padding: 15px;
+
+    text-align: center;
+
+    border-radius: 12px;
+
+    background:
+        rgba(91,105,247,.08);
+
+    border:
+        1px solid
+        rgba(91,105,247,.13);
+}
+
+
+.opportunity-count strong {
+
+    display: block;
+
+    color: #8190ff;
+
+    font-size: 22px;
+}
+
+
+.opportunity-count span {
+
+    color: #657087;
+
+    font-size: 9px;
+}
+
+
+.opportunities-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap: 16px;
+}
+
+
+.opportunity-card {
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(28,33,50,.94),
+            rgba(17,21,33,.94)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.075);
+
+    transition:
+        .2s ease;
+}
+
+
+.opportunity-card:hover {
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(101,119,255,.22);
+
+    box-shadow:
+        0 20px 45px
+        rgba(0,0,0,.20);
+}
+
+
+.opportunity-card-top {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 18px 19px 0;
+}
+
+
+.job-type-icon.large {
+
+    width: 42px;
+
+    height: 42px;
+
+    font-size: 17px;
+}
+
+
+.match-score-large {
+
+    color: #7f8eff;
+
+    font-size: 17px;
+
+    font-weight: 750;
+
+    text-align: right;
+}
+
+
+.match-score-large span {
+
+    display: block;
+
+    color: #5f6981;
+
+    font-size: 8px;
+
+    font-weight: 500;
+
+    margin-top: 2px;
+}
+
+
+.opportunity-card-content {
+
+    padding: 17px 19px;
+
+    flex: 1;
+}
+
+
+.opportunity-type {
+
+    color: #6974e5;
+
+    font-size: 8px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    font-weight: 700;
+
+    margin-bottom: 6px;
+}
+
+
+.opportunity-card-content h3 {
+
+    color: #e3e6ef;
+
+    font-size: 17px;
+
+    letter-spacing: -.4px;
+
+    margin-bottom: 5px;
+}
+
+
+.industry-name {
+
+    color: #808ba3;
+
+    font-size: 10px;
+
+    margin-bottom: 13px;
+}
+
+
+.opportunity-card-content p {
+
+    color: #707a91;
+
+    font-size: 10px;
+
+    line-height: 1.6;
+
+    margin-bottom: 13px;
+}
+
+
+.job-meta {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+    margin-bottom: 15px;
+}
+
+
+.job-meta span {
+
+    padding:
+        5px 7px;
+
+    border-radius: 6px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    color: #747e95;
+
+    font-size: 8px;
+}
+
+
+.job-skills-section {
+
+    margin-top: 12px;
+}
+
+
+.job-section-label {
+
+    color: #555f77;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 7px;
+}
+
+
+.skill-tags {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 5px;
+}
+
+
+.skill-tag {
+
+    padding:
+        5px 7px;
+
+    border-radius: 6px;
+
+    font-size: 8px;
+
+    font-weight: 600;
+}
+
+
+.skill-tag.matched {
+
+    color: #70cfae;
+
+    background:
+        rgba(55,202,151,.08);
+
+    border:
+        1px solid
+        rgba(55,202,151,.10);
+}
+
+
+.skill-tag.gap {
+
+    color: #d49c5e;
+
+    background:
+        rgba(214,155,85,.08);
+
+    border:
+        1px solid
+        rgba(214,155,85,.10);
+}
+
+
+.opportunity-card-footer {
+
+    padding:
+        0 19px 19px;
+}
+
+
+/* =========================================================
+   APPLICATIONS
+========================================================= */
+
+.application-overview {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+
+.application-overview-stat {
+
+    padding: 17px;
+
+    border-radius: 13px;
+
+    background:
+        rgba(27,32,48,.70);
+
+    border:
+        1px solid
+        rgba(255,255,255,.065);
+}
+
+
+.application-overview-stat span {
+
+    display: block;
+
+    color: #626c84;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    font-weight: 700;
+
+    margin-bottom: 9px;
+}
+
+
+.application-overview-stat strong {
+
+    color: #e5e8f1;
+
+    font-size: 23px;
+}
+
+
+.application-table {
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.application-table-header,
+.application-table-row {
+
+    display: grid;
+
+    grid-template-columns:
+        2fr .7fr 1fr .8fr;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.application-table-header {
+
+    padding:
+        0 0 12px;
+
+    color: #525c74;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    font-weight: 700;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.06);
+}
+
+
+.application-table-row {
+
+    min-height: 72px;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.05);
+}
+
+
+.application-table-row:last-child {
+
+    border-bottom: none;
+}
+
+
+.application-job {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.application-job-icon {
+
+    width: 35px;
+
+    height: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 9px;
+
+    color: #7585ff;
+
+    background:
+        rgba(91,105,247,.09);
+}
+
+
+.application-job div:last-child {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    min-width: 0;
+}
+
+
+.application-job strong {
+
+    color: #ccd2e0;
+
+    font-size: 11px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+.application-job span {
+
+    color: #68738a;
+
+    font-size: 9px;
+}
+
+
+.application-type,
+.application-date {
+
+    color: #788299;
+
+    font-size: 9px;
+
+    text-transform: capitalize;
+}
+
+
+/* =========================================================
+   RESPONSIVE STUDENT PAGES
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .question-options {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .full-skill-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .opportunities-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .application-overview {
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+
+    .profile-summary {
+
+        flex-wrap: wrap;
+    }
+
+
+    .profile-summary .primary-button {
+
+        margin-left: 0;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .assessment-intro {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .assessment-counter {
+
+        width: 100%;
+    }
+
+
+    .assessment-question {
+
+        padding: 19px;
+    }
+
+
+    .assessment-submit-area {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .assessment-submit-button {
+
+        width: 100%;
+    }
+
+
+    .assessment-result-hero {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .assessment-result-actions {
+
+        flex-direction: column;
+    }
+
+
+    .assessment-result-actions button {
+
+        width: 100%;
+    }
+
+
+    .opportunities-heading {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .opportunity-count {
+
+        width: 100%;
+    }
+
+
+    .application-table-header {
+
+        display: none;
+    }
+
+
+    .application-table-row {
+
+        grid-template-columns: 1fr;
+
+        gap: 7px;
+
+        padding:
+            15px 0;
+    }
+
+
+    .application-overview {
+
+        gap: 8px;
+    }
+
+
+    .profile-summary-divider {
+
+        display: none;
+    }
+}
+/* =========================================================
+   INDUSTRY DASHBOARD
+   SAME DESIGN SYSTEM AS STUDENT
+========================================================= */
+
+.industry-overview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.industry-overview-item {
+    padding: 16px;
+    border-radius: 13px;
+    background: rgba(38, 43, 59, .38);
+    border: 1px solid rgba(255, 255, 255, .055);
+}
+
+.industry-overview-item span {
+    display: block;
+    color: #68738b;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .7px;
+}
+
+.industry-overview-item strong {
+    display: block;
+    margin-top: 8px;
+    color: #e3e6ef;
+    font-size: 21px;
+}
+
+
+/* =========================================================
+   INDUSTRY OPPORTUNITIES
+========================================================= */
+
+.industry-job-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.industry-opportunity-card {
+    padding: 18px;
+    border-radius: 15px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(28, 33, 50, .94),
+            rgba(17, 21, 33, .94)
+        );
+    border: 1px solid rgba(255, 255, 255, .065);
+    transition: .2s ease;
+}
+
+.industry-opportunity-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(101, 119, 255, .25);
+}
+
+.industry-opportunity-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.industry-opportunity-top span {
+    padding: 5px 8px;
+    border-radius: 7px;
+    color: #8290ff;
+    background: rgba(91, 105, 247, .09);
+    font-size: 8px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.industry-opportunity-card h3 {
+    margin: 0;
+    color: #e3e6ef;
+    font-size: 15px;
+    letter-spacing: -.2px;
+}
+
+.industry-opportunity-card p {
+    margin: 8px 0 0;
+    color: #707a91;
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+.industry-opportunity-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, .05);
+}
+
+.industry-opportunity-footer span {
+    color: #727c94;
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   INDUSTRY APPLICANTS
+========================================================= */
+
+.industry-applications-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.industry-application-row {
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr) 150px 125px;
+    align-items: center;
+    gap: 13px;
+    min-height: 64px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .05);
+}
+
+.industry-application-row:last-child {
+    border-bottom: none;
+}
+
+.industry-candidate-avatar {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #5e59b7, #3d69bd);
+    font-size: 11px;
+    font-weight: 750;
+}
+
+.industry-candidate-info {
+    min-width: 0;
+}
+
+.industry-candidate-info strong {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #dce0e9;
+    font-size: 11px;
+}
+
+.industry-candidate-info span {
+    display: block;
+    margin-top: 4px;
+    color: #68738b;
+    font-size: 9px;
+}
+
+.industry-applied-role {
+    color: #7a849c;
+    font-size: 9px;
+}
+
+.industry-status-control select {
+    width: 100%;
+    min-height: 34px;
+    padding: 7px 9px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, .08);
+    outline: none;
+    color: #c7cbd5;
+    background: #111522;
+    font-size: 9px;
+}
+
+.industry-status-control select:focus {
+    border-color: rgba(101, 119, 255, .55);
+}
+
+.industry-status-control select option {
+    color: #ffffff;
+    background: #111522;
+}
+
+
+/* =========================================================
+   INDUSTRY POST OPPORTUNITY
+========================================================= */
+
+.industry-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.industry-form-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.industry-form-group {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.industry-form-group.full {
+    grid-column: 1 / -1;
+}
+
+.industry-form-group label {
+    color: #aeb6c9;
+    font-size: 10px;
+    font-weight: 650;
+}
+
+.industry-form-group input,
+.industry-form-group textarea,
+.industry-form-group select {
+    width: 100%;
+    min-height: 42px;
+    padding: 11px 13px;
+    border-radius: 9px;
+    border: 1px solid rgba(255, 255, 255, .08);
+    outline: none;
+    color: #e7e9f0;
+    background: rgba(39, 44, 61, .38);
+    font-size: 11px;
+    transition: .18s ease;
+}
+
+.industry-form-group input::placeholder,
+.industry-form-group textarea::placeholder {
+    color: #68738b;
+}
+
+.industry-form-group input:focus,
+.industry-form-group textarea:focus,
+.industry-form-group select:focus {
+    border-color: rgba(103, 120, 255, .58);
+    background: rgba(50, 56, 78, .48);
+    box-shadow: 0 0 0 3px rgba(91, 105, 247, .06);
+}
+
+.industry-form-group textarea {
+    min-height: 135px;
+    resize: vertical;
+    line-height: 1.55;
+}
+
+.industry-form-group select {
+    cursor: pointer;
+}
+
+.industry-form-group select option {
+    color: #ffffff;
+    background: #111522;
+}
+
+
+/* =========================================================
+   FALLBACK FORM STYLING
+   Covers IndustryPostJob even if some fields don't have
+   the exact class names above.
+========================================================= */
+
+.dashboard-content form {
+    width: 100%;
+}
+
+.dashboard-content form input:not([type="checkbox"]):not([type="radio"]),
+.dashboard-content form textarea,
+.dashboard-content form select {
+    border-radius: 9px;
+    border: 1px solid rgba(255, 255, 255, .08);
+    outline: none;
+    color: #e7e9f0;
+    background: rgba(39, 44, 61, .38);
+}
+
+.dashboard-content form input:not([type="checkbox"]):not([type="radio"]) {
+    min-height: 42px;
+    padding: 11px 13px;
+}
+
+.dashboard-content form textarea {
+    min-height: 135px;
+    padding: 11px 13px;
+    resize: vertical;
+    line-height: 1.55;
+}
+
+.dashboard-content form select {
+    min-height: 42px;
+    padding: 9px 11px;
+}
+
+.dashboard-content form input:not([type="checkbox"]):not([type="radio"]):focus,
+.dashboard-content form textarea:focus,
+.dashboard-content form select:focus {
+    border-color: rgba(103, 120, 255, .58);
+    outline: none;
+}
+
+.dashboard-content form input::placeholder,
+.dashboard-content form textarea::placeholder {
+    color: #68738b;
+}
+
+.dashboard-content form select option {
+    color: #ffffff;
+    background: #111522;
+}
+
+
+/* =========================================================
+   REQUIRED SKILLS
+========================================================= */
+
+.required-skills-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.required-skill-item {
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, .055);
+    background: rgba(39, 44, 61, .30);
+}
+
+.required-skill-item label {
+    color: #c0c5d2;
+    font-size: 10px;
+}
+
+.required-skill-item select {
+    width: 90px;
+    min-height: 32px;
+    padding: 5px 7px;
+    border-radius: 7px;
+    border: 1px solid rgba(255, 255, 255, .08);
+    color: #cbd0dc;
+    background: #111522;
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   INDUSTRY JOB LIST
+========================================================= */
+
+.industry-jobs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.industry-job-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 17px 18px;
+    border-radius: 13px;
+    border: 1px solid rgba(255, 255, 255, .055);
+    background: rgba(38, 43, 59, .34);
+}
+
+.industry-job-info {
+    min-width: 0;
+    flex: 1;
+}
+
+.industry-job-info h3 {
+    margin: 0;
+    color: #e2e5ee;
+    font-size: 13px;
+}
+
+.industry-job-info p {
+    margin: 5px 0 0;
+    color: #68738b;
+    font-size: 9px;
+}
+
+.industry-job-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 9px;
+}
+
+.industry-job-meta span {
+    padding: 5px 7px;
+    border-radius: 6px;
+    color: #7d879e;
+    background: rgba(255, 255, 255, .04);
+    font-size: 8px;
+}
+
+.industry-job-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* =========================================================
+   INDUSTRY RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .industry-job-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .industry-overview-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .industry-application-row {
+        grid-template-columns: 38px minmax(0, 1fr) 120px;
+    }
+
+    .industry-applied-role {
+        display: none;
+    }
+}
+
+@media (max-width: 760px) {
+
+    .industry-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .industry-form-group.full {
+        grid-column: auto;
+    }
+
+    .required-skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .industry-overview-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .industry-application-row {
+        grid-template-columns: 36px minmax(0, 1fr) 105px;
+    }
+
+    .industry-job-row {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .industry-job-actions {
+        width: 100%;
+    }
+}
+
+@media (max-width: 560px) {
+
+    .industry-overview-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .industry-application-row {
+        grid-template-columns: 36px minmax(0, 1fr);
+    }
+
+    .industry-status-control {
+        grid-column: 2;
+    }
+}
+
+
+/* =========================================================
+   INDUSTRY THEME
+   Reference style: compact dark dashboard with orange accent
+   Student styling remains unchanged.
+========================================================= */
+
+/* Detect Industry pages using the existing Industry-specific
+   page classes, so no DashboardLayout.jsx change is required. */
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) {
+    background: #090d18;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .dashboard-sidebar {
+    width: 303px;
+    min-width: 303px;
+    padding: 0 21px 22px;
+    background: #0a0e19;
+    border-right: 1px solid #242a37;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .dashboard-main {
+    margin-left: 303px;
+    width: calc(100% - 303px);
+    background: #090d18;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .sidebar-brand {
+    height: 104px;
+    padding: 0 8px;
+    border-bottom: 1px solid #202632;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .sidebar-brand-icon {
+    width: 43px;
+    height: 43px;
+    border-radius: 11px;
+    background: #e98d35;
+    color: #10141d;
+    font-size: 12px;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .sidebar-brand-name {
+    font-size: 18px;
+    color: #f2f3f7;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .sidebar-brand-tag {
+    color: #697186;
+    font-size: 8px;
+    letter-spacing: 1.5px;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .sidebar-account {
+    margin: 18px 0 28px;
+    padding: 11px 12px;
+    border: 1px solid #68401f;
+    border-radius: 12px;
+    background: rgba(233, 141, 53, .07);
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .account-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: #e98d35;
+    color: #141821;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .account-name {
+    color: #dce0e8;
+    font-size: 12px;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .account-role {
+    color: #7d8498;
+    font-size: 10px;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .sidebar-section-label {
+    padding: 0 16px 11px;
+    color: #596177;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .sidebar-navigation {
+    gap: 7px;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .sidebar-nav-item {
+    min-height: 48px;
+    padding: 0 15px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    color: #929aae;
+    font-size: 13px;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .sidebar-nav-item:hover {
+    color: #f0f1f5;
+    background: rgba(233, 141, 53, .06);
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .sidebar-nav-item:first-child {
+    color: #f1f2f6;
+    background: rgba(233, 141, 53, .12);
+    border-color: #6b4325;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .nav-icon {
+    color: #aab1c1;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .sidebar-nav-item:first-child .nav-icon {
+    color: #e98d35;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .nav-chevron {
+    display: none;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .sidebar-help {
+    display: none;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .logout-button {
+    min-height: 50px;
+    border: 1px solid #252c3a;
+    border-radius: 11px;
+    padding: 0 15px;
+    color: #858da2;
+    font-size: 12px;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .logout-button:hover {
+    color: #e98d35;
+    background: rgba(233, 141, 53, .06);
+}
+
+/* Industry top area */
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .dashboard-topbar {
+    min-height: 126px;
+    padding: 28px 50px;
+    background: #090d18;
+    border-bottom: 1px solid #202632;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .breadcrumb {
+    display: none;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .dashboard-title {
+    font-size: 31px;
+    letter-spacing: -.9px;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .dashboard-subtitle {
+    margin-top: 8px;
+    color: #7e879c;
+    font-size: 14px;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .topbar-status span {
+    background: #e98d35;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .topbar-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: #4c63dc;
+}
+
+/* Industry content */
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .dashboard-content {
+    max-width: 1250px;
+    padding: 48px 50px 70px;
+}
+
+/* Industry cards */
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .dashboard-card {
+    border: 1px solid #292f3d;
+    border-radius: 20px;
+    background: #171b27;
+    box-shadow: none;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .card-header {
+    min-height: 78px;
+    padding: 20px 27px;
+    border-bottom: 1px solid #292f3d;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .card-title {
+    font-size: 15px;
+    color: #edf0f5;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .card-description {
+    font-size: 11px;
+    color: #727c92;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .card-body {
+    padding: 27px;
+}
+
+/* Industry Post Opportunity form */
+
+.dashboard-page:has(.industry-form) .industry-form {
+    gap: 24px;
+}
+
+.dashboard-page:has(.industry-form) .industry-form-grid {
+    gap: 17px;
+}
+
+.dashboard-page:has(.industry-form) .industry-form-group {
+    gap: 8px;
+}
+
+.dashboard-page:has(.industry-form) .industry-form-group label {
+    color: #aeb6c7;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.dashboard-page:has(.industry-form) .industry-form-group input,
+.dashboard-page:has(.industry-form) .industry-form-group textarea,
+.dashboard-page:has(.industry-form) .industry-form-group select {
+    min-height: 50px;
+    padding: 13px 15px;
+    border: 1px solid #363c4a;
+    border-radius: 11px;
+    color: #e8eaf0;
+    background: #232732;
+    font-size: 13px;
+}
+
+.dashboard-page:has(.industry-form) .industry-form-group textarea {
+    min-height: 145px;
+}
+
+.dashboard-page:has(.industry-form) .industry-form-group input:focus,
+.dashboard-page:has(.industry-form) .industry-form-group textarea:focus,
+.dashboard-page:has(.industry-form) .industry-form-group select:focus {
+    border-color: #e98d35;
+    box-shadow: 0 0 0 3px rgba(233, 141, 53, .08);
+}
+
+/* Required skills */
+
+.dashboard-page:has(.industry-form) .required-skills-grid {
+    gap: 12px;
+}
+
+.dashboard-page:has(.industry-form) .required-skill-item {
+    min-height: 58px;
+    padding: 12px 14px;
+    border: 1px solid #303645;
+    border-radius: 11px;
+    background: #1d222e;
+}
+
+.dashboard-page:has(.industry-form) .required-skill-item label {
+    color: #c4c9d4;
+    font-size: 11px;
+}
+
+.dashboard-page:has(.industry-form) .required-skill-item select {
+    min-height: 34px;
+    width: 92px;
+    border: 1px solid #3b4150;
+    background: #252a35;
+    color: #d5d8e0;
+}
+
+.dashboard-page:has(.industry-form) .industry-form button[type="submit"],
+.dashboard-page:has(.industry-form) .primary-button {
+    min-height: 48px;
+    border-radius: 11px;
+    background: #e98d35;
+    color: #151922;
+    box-shadow: none;
+    font-size: 13px;
+    font-weight: 750;
+}
+
+.dashboard-page:has(.industry-form) .industry-form button[type="submit"]:hover,
+.dashboard-page:has(.industry-form) .primary-button:hover {
+    background: #f09a45;
+}
+
+/* Industry opportunity cards */
+
+.dashboard-page:has(.industry-job-cards) .industry-job-cards {
+    gap: 18px;
+}
+
+.dashboard-page:has(.industry-job-cards) .industry-opportunity-card {
+    padding: 22px;
+    border: 1px solid #2a303e;
+    border-radius: 17px;
+    background: #171b27;
+}
+
+.dashboard-page:has(.industry-job-cards) .industry-opportunity-card:hover {
+    border-color: #694221;
+    transform: translateY(-2px);
+}
+
+.dashboard-page:has(.industry-job-cards) .industry-opportunity-top span {
+    color: #e98d35;
+    background: rgba(233, 141, 53, .10);
+    border: 1px solid rgba(233, 141, 53, .16);
+}
+
+.dashboard-page:has(.industry-job-cards) .industry-opportunity-card h3 {
+    color: #e9ebf0;
+    font-size: 15px;
+}
+
+.dashboard-page:has(.industry-job-cards) .industry-opportunity-footer {
+    border-top-color: #2a303e;
+}
+
+/* Industry applicants */
+
+.dashboard-page:has(.industry-applications-list) .industry-application-row {
+    min-height: 70px;
+    border-bottom-color: #292f3d;
+}
+
+.dashboard-page:has(.industry-applications-list) .industry-candidate-avatar {
+    background: #e98d35;
+    color: #151922;
+}
+
+.dashboard-page:has(.industry-applications-list) .industry-status-control select {
+    min-height: 38px;
+    border-color: #363c4a;
+    border-radius: 9px;
+    background: #232732;
+    color: #d3d7e0;
+}
+
+.dashboard-page:has(.industry-applications-list) .industry-status-control select:focus {
+    border-color: #e98d35;
+}
+
+/* Industry stats */
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .stats-grid {
+    gap: 14px;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .stat-card {
+    min-height: 125px;
+    padding: 20px;
+    border-color: #292f3d;
+    border-radius: 15px;
+    background: #171b27;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list
+) .stat-value {
+    color: #e98d35;
+}
+
+/* Industry mobile */
+
+@media (max-width: 760px) {
+
+    .dashboard-page:has(
+        .industry-form,
+        .industry-job-cards,
+        .industry-applications-list,
+        .industry-overview-grid,
+        .industry-jobs-list
+    ) .dashboard-sidebar {
+        width: 245px;
+        min-width: 245px;
+        padding: 18px 14px;
+    }
+
+    .dashboard-page:has(
+        .industry-form,
+        .industry-job-cards,
+        .industry-applications-list,
+        .industry-overview-grid,
+        .industry-jobs-list
+    ) .dashboard-main {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .dashboard-page:has(
+        .industry-form,
+        .industry-job-cards,
+        .industry-applications-list,
+        .industry-overview-grid,
+        .industry-jobs-list
+    ) .dashboard-topbar {
+        min-height: 85px;
+        padding: 18px;
+    }
+
+    .dashboard-page:has(
+        .industry-form,
+        .industry-job-cards,
+        .industry-applications-list,
+        .industry-overview-grid,
+        .industry-jobs-list
+    ) .dashboard-content {
+        padding: 22px 16px 50px;
+    }
+}
+
+@media (max-width: 560px) {
+
+    .dashboard-page:has(.industry-form) .industry-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-page:has(.industry-form) .industry-form-group.full {
+        grid-column: auto;
+    }
+
+    .dashboard-page:has(.industry-form) .required-skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   FINAL INDUSTRY FIX
+   Matches the supplied Industry reference screenshots.
+   Student styles are untouched.
+========================================================= */
+
+/* ---- Industry page detection ---- */
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) {
+    --industry-orange: #e98d35;
+    --industry-bg: #090d18;
+    --industry-card: #171b27;
+    --industry-field: #242833;
+    --industry-border: #2b3140;
+    --industry-text: #edf0f5;
+    --industry-muted: #7d879d;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .dashboard-sidebar {
+    width: 303px !important;
+    min-width: 303px !important;
+    padding: 0 21px 22px !important;
+    background: #0a0e19 !important;
+    border-right: 1px solid #252b38 !important;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .dashboard-main {
+    margin-left: 303px !important;
+    width: calc(100% - 303px) !important;
+    background: #090d18 !important;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .sidebar-brand {
+    height: 104px !important;
+    padding: 0 8px !important;
+    border-bottom: 1px solid #202632 !important;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .sidebar-brand-icon {
+    width: 43px !important;
+    height: 43px !important;
+    border-radius: 11px !important;
+    background: var(--industry-orange) !important;
+    color: #10141b !important;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .sidebar-brand-name {
+    font-size: 18px !important;
+    color: #f1f3f7 !important;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .sidebar-account {
+    margin: 18px 0 28px !important;
+    padding: 11px 12px !important;
+    border: 1px solid #68401f !important;
+    border-radius: 12px !important;
+    background: rgba(233,141,53,.07) !important;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .account-avatar {
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 10px !important;
+    background: var(--industry-orange) !important;
+    color: #141820 !important;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .sidebar-nav-item {
+    min-height: 48px !important;
+    padding: 0 15px !important;
+    border-radius: 12px !important;
+    color: #929aac !important;
+    font-size: 13px !important;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .sidebar-nav-item:first-child {
+    color: #f0f1f5 !important;
+    background: rgba(233,141,53,.10) !important;
+    border-color: #6b4325 !important;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .sidebar-nav-item:first-child .nav-icon {
+    color: var(--industry-orange) !important;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .dashboard-topbar {
+    min-height: 126px !important;
+    padding: 28px 50px !important;
+    background: #090d18 !important;
+    border-bottom: 1px solid #202632 !important;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .breadcrumb {
+    display: none !important;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .dashboard-title {
+    font-size: 31px !important;
+    line-height: 1.1 !important;
+    letter-spacing: -1px !important;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .dashboard-subtitle {
+    margin-top: 8px !important;
+    color: #7d879c !important;
+    font-size: 14px !important;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .dashboard-content {
+    max-width: 1250px !important;
+    padding: 48px 50px 70px !important;
+}
+
+
+/* =========================================================
+   INDUSTRY WELCOME
+========================================================= */
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .dashboard-welcome {
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+    margin-bottom: 18px !important;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .dashboard-welcome h2 {
+    margin: 4px 0 0 !important;
+    color: #edf0f5 !important;
+    font-size: 27px !important;
+    line-height: 1.2 !important;
+    letter-spacing: -.5px !important;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .dashboard-welcome p {
+    margin: 7px 0 0 !important;
+    color: #8a93a7 !important;
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .welcome-eyebrow {
+    color: #e5e8ef !important;
+    font-size: 11px !important;
+    letter-spacing: 1px !important;
+}
+
+
+/* =========================================================
+   ALL INDUSTRY BUTTONS
+   Prevents browser-default white buttons.
+========================================================= */
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .card-header button,
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .dashboard-content button.text-button,
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .dashboard-content button:not(.sidebar-nav-item):not(.logout-button) {
+    font-family: inherit;
+}
+
+
+/* Header View All buttons */
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .card-header button {
+    border: 0 !important;
+    outline: 0 !important;
+    padding: 7px 0 !important;
+    color: #d0d5df !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .card-header button:hover {
+    color: var(--industry-orange) !important;
+}
+
+
+/* =========================================================
+   INDUSTRY STATS
+========================================================= */
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .stats-grid {
+    gap: 16px !important;
+    margin-bottom: 22px !important;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .stat-card {
+    position: relative !important;
+    min-height: 162px !important;
+    padding: 28px 27px !important;
+    overflow: hidden !important;
+    border: 1px solid #2a3040 !important;
+    border-radius: 20px !important;
+    background: #171b27 !important;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .stat-card::after {
+    content: "";
+    position: absolute;
+    width: 105px;
+    height: 105px;
+    right: -38px;
+    top: -50px;
+    border-radius: 50%;
+    background: rgba(65,75,139,.24);
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .stat-label {
+    position: relative;
+    z-index: 1;
+    color: #7b869d !important;
+    font-size: 10px !important;
+    letter-spacing: .5px !important;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .stat-value {
+    position: relative;
+    z-index: 1;
+    margin-top: 17px !important;
+    color: var(--industry-orange) !important;
+    font-size: 38px !important;
+    line-height: 1 !important;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .stat-change {
+    position: relative;
+    z-index: 1;
+    margin-top: 17px !important;
+    color: #4dcc9b !important;
+    font-size: 10px !important;
+}
+
+
+/* =========================================================
+   INDUSTRY CARDS
+========================================================= */
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .dashboard-card {
+    border: 1px solid #2a3040 !important;
+    border-radius: 20px !important;
+    background: #171b27 !important;
+    box-shadow: none !important;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .card-header {
+    min-height: 80px !important;
+    padding: 20px 28px !important;
+    border-bottom: 1px solid #292f3c !important;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .card-title {
+    color: #edf0f5 !important;
+    font-size: 15px !important;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .card-description {
+    color: #738098 !important;
+    font-size: 11px !important;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .card-body {
+    padding: 28px !important;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   Fixes smashed text seen in screenshot.
+========================================================= */
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .empty-state {
+    min-height: 145px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    text-align: center !important;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .empty-state strong {
+    display: block !important;
+    color: #e5e8ee !important;
+    font-size: 13px !important;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .empty-state span {
+    display: block !important;
+    color: #727c91 !important;
+    font-size: 10px !important;
+    line-height: 1.5 !important;
+}
+
+.dashboard-page:has(
+    .industry-form,
+    .industry-job-cards,
+    .industry-applications-list,
+    .industry-overview-grid,
+    .industry-jobs-list,
+    .industry-job-row
+) .empty-state .primary-button {
+    margin-top: 8px !important;
+}
+
+
+/* =========================================================
+   POST OPPORTUNITY
+========================================================= */
+
+.dashboard-page:has(.industry-form) .dashboard-card {
+    margin-bottom: 18px !important;
+}
+
+.dashboard-page:has(.industry-form) .industry-form {
+    gap: 24px !important;
+}
+
+.dashboard-page:has(.industry-form) .industry-form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 18px !important;
+}
+
+.dashboard-page:has(.industry-form) .industry-form-group {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+}
+
+.dashboard-page:has(.industry-form) .industry-form-group label {
+    color: #aeb6c8 !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+}
+
+.dashboard-page:has(.industry-form) .industry-form-group input,
+.dashboard-page:has(.industry-form) .industry-form-group textarea,
+.dashboard-page:has(.industry-form) .industry-form-group select {
+    width: 100% !important;
+    min-height: 48px !important;
+    padding: 12px 14px !important;
+    border: 1px solid #363c4a !important;
+    border-radius: 10px !important;
+    outline: none !important;
+    color: #e7e9ef !important;
+    background: #232732 !important;
+    font-size: 12px !important;
+    font-family: inherit !important;
+}
+
+.dashboard-page:has(.industry-form) .industry-form-group textarea {
+    min-height: 140px !important;
+}
+
+.dashboard-page:has(.industry-form) .industry-form-group input:focus,
+.dashboard-page:has(.industry-form) .industry-form-group textarea:focus,
+.dashboard-page:has(.industry-form) .industry-form-group select:focus {
+    border-color: var(--industry-orange) !important;
+    box-shadow: 0 0 0 3px rgba(233,141,53,.08) !important;
+}
+
+.dashboard-page:has(.industry-form) .industry-form-group input::placeholder,
+.dashboard-page:has(.industry-form) .industry-form-group textarea::placeholder {
+    color: #687287 !important;
+}
+
+
+/* Generic raw form controls on Industry Post page */
+
+.dashboard-page:has(.industry-form) .dashboard-content form input:not([type="checkbox"]):not([type="radio"]),
+.dashboard-page:has(.industry-form) .dashboard-content form textarea,
+.dashboard-page:has(.industry-form) .dashboard-content form select {
+    width: 100% !important;
+    min-height: 48px !important;
+    padding: 12px 14px !important;
+    border: 1px solid #363c4a !important;
+    border-radius: 10px !important;
+    outline: none !important;
+    color: #e7e9ef !important;
+    background: #232732 !important;
+    font-family: inherit !important;
+    font-size: 12px !important;
+}
+
+.dashboard-page:has(.industry-form) .dashboard-content form textarea {
+    min-height: 140px !important;
+}
+
+.dashboard-page:has(.industry-form) .dashboard-content form button[type="submit"] {
+    min-height: 48px !important;
+    padding: 0 20px !important;
+    border: none !important;
+    border-radius: 11px !important;
+    color: #171a21 !important;
+    background: var(--industry-orange) !important;
+    box-shadow: none !important;
+    font-weight: 750 !important;
+}
+
+
+/* =========================================================
+   REQUIRED SKILLS - FIX RAW WHITE BUTTONS
+========================================================= */
+
+.dashboard-page:has(.industry-form) .required-skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+}
+
+.dashboard-page:has(.industry-form) .required-skill-item {
+    min-height: 72px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 14px 16px !important;
+    border: 1px solid #303645 !important;
+    border-radius: 12px !important;
+    background: #1d222e !important;
+}
+
+.dashboard-page:has(.industry-form) .required-skill-item label {
+    color: #d0d4de !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+}
+
+.dashboard-page:has(.industry-form) .required-skill-item button {
+    border: 1px solid #3a4150 !important;
+    border-radius: 8px !important;
+    padding: 7px 10px !important;
+    color: #cbd0db !important;
+    background: #252a35 !important;
+    font-size: 10px !important;
+    box-shadow: none !important;
+}
+
+.dashboard-page:has(.industry-form) .required-skill-item select {
+    width: 95px !important;
+    min-height: 35px !important;
+    padding: 6px 8px !important;
+    border: 1px solid #3a4150 !important;
+    border-radius: 8px !important;
+    color: #cbd0db !important;
+    background: #252a35 !important;
+    font-size: 10px !important;
+}
+
+
+/* =========================================================
+   INDUSTRY JOB CARDS
+========================================================= */
+
+.dashboard-page:has(.industry-job-cards) .industry-job-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 18px !important;
+}
+
+.dashboard-page:has(.industry-job-cards) .industry-opportunity-card {
+    min-height: 170px !important;
+    padding: 22px !important;
+    border: 1px solid #2a3040 !important;
+    border-radius: 17px !important;
+    background: #171b27 !important;
+}
+
+.dashboard-page:has(.industry-job-cards) .industry-opportunity-card h3 {
+    color: #e9ebf0 !important;
+    font-size: 15px !important;
+}
+
+.dashboard-page:has(.industry-job-cards) .industry-opportunity-top span {
+    color: var(--industry-orange) !important;
+    background: rgba(233,141,53,.10) !important;
+    border: 1px solid rgba(233,141,53,.18) !important;
+}
+
+
+/* =========================================================
+   APPLICANTS
+========================================================= */
+
+.dashboard-page:has(.industry-applications-list) .industry-application-row {
+    min-height: 70px !important;
+    border-bottom: 1px solid #292f3c !important;
+}
+
+.dashboard-page:has(.industry-applications-list) .industry-candidate-avatar {
+    background: var(--industry-orange) !important;
+    color: #151922 !important;
+}
+
+.dashboard-page:has(.industry-applications-list) .industry-status-control select {
+    min-height: 38px !important;
+    border: 1px solid #363c4a !important;
+    border-radius: 9px !important;
+    color: #d3d7df !important;
+    background: #232732 !important;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .dashboard-page:has(
+        .industry-form,
+        .industry-job-cards,
+        .industry-applications-list,
+        .industry-overview-grid,
+        .industry-jobs-list,
+        .industry-job-row
+    ) .dashboard-sidebar {
+        width: 245px !important;
+        min-width: 245px !important;
+        padding: 18px 14px !important;
+    }
+
+    .dashboard-page:has(
+        .industry-form,
+        .industry-job-cards,
+        .industry-applications-list,
+        .industry-overview-grid,
+        .industry-jobs-list,
+        .industry-job-row
+    ) .dashboard-main {
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+
+    .dashboard-page:has(
+        .industry-form,
+        .industry-job-cards,
+        .industry-applications-list,
+        .industry-overview-grid,
+        .industry-jobs-list,
+        .industry-job-row
+    ) .dashboard-topbar {
+        min-height: 85px !important;
+        padding: 18px !important;
+    }
+
+    .dashboard-page:has(
+        .industry-form,
+        .industry-job-cards,
+        .industry-applications-list,
+        .industry-overview-grid,
+        .industry-jobs-list,
+        .industry-job-row
+    ) .dashboard-content {
+        padding: 22px 16px 50px !important;
+    }
+
+    .dashboard-page:has(.industry-form) .industry-form-grid,
+    .dashboard-page:has(.industry-form) .required-skills-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+
+
