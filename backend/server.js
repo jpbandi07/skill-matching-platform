@@ -10,6 +10,7 @@ const studentRoutes = require("./routes/studentRoutes");
 const assessmentRoutes = require("./routes/assessmentRoutes");
 const jobRoutes = require("./routes/jobRoutes");
 const matchingRoutes = require("./routes/matchingRoutes");
+const courseRoutes = require("./routes/courseRoutes");
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use("/api/student", studentRoutes);
 app.use("/api/assessment", assessmentRoutes);
 app.use("/api/jobs", jobRoutes);
 app.use("/api/matching", matchingRoutes);
+app.use("/api/courses", courseRoutes);
 
 app.get("/", (req, res) => {
     res.json({

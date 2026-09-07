@@ -23,6 +23,9 @@ function StudentDashboard() {
     const [recommendations, setRecommendations] =
         useState([]);
 
+    const [courseRecommendations, setCourseRecommendations] =
+        useState([]);
+
     const [applications, setApplications] =
         useState([]);
 
@@ -79,11 +82,12 @@ function StudentDashboard() {
                 const [
                     skillsResponse,
                     jobsResponse,
-                    applicationsResponse
+                    applicationsResponse,
+                    coursesResponse
                 ] = await Promise.all([
 
                     fetch(
-                        `${API_URL}/api/student/skills`,
+                        `${API_URL}/api/assessment/results`,
                         {
                             headers
                         }
@@ -101,20 +105,75 @@ function StudentDashboard() {
                         {
                             headers
                         }
+                    ),
+
+                    fetch(
+                        `${API_URL}/api/courses/recommended`,
+                        {
+                            headers
+                        }
                     )
                 ]);
 
+
+                // ==========================================
+                // SKILL PROFILE
+                // ==========================================
 
                 if (skillsResponse.ok) {
 
                     const data =
                         await skillsResponse.json();
 
-                    setSkillProfile(
-                        data.skill_profile
-                    );
+                    const results =
+                        data.results || [];
+
+
+                    const totalSkills =
+                        results.length;
+
+
+                    const strongSkills =
+                        results.filter(
+                            skill => skill.score >= 80
+                        ).length;
+
+
+                    const overallScore =
+                        totalSkills > 0
+                            ? Math.round(
+                                results.reduce(
+                                    (sum, skill) =>
+                                        sum + skill.score,
+                                    0
+                                ) / totalSkills
+                            )
+                            : 0;
+
+
+                    setSkillProfile({
+
+                        all_skills:
+                            results,
+
+                        total_skills:
+                            totalSkills,
+
+                        strong_skills:
+                            results.filter(
+                                skill => skill.score >= 80
+                            ),
+
+                        overall_score:
+                            overallScore
+
+                    });
                 }
 
+
+                // ==========================================
+                // JOB RECOMMENDATIONS
+                // ==========================================
 
                 if (jobsResponse.ok) {
 
@@ -127,6 +186,10 @@ function StudentDashboard() {
                 }
 
 
+                // ==========================================
+                // APPLICATIONS
+                // ==========================================
+
                 if (applicationsResponse.ok) {
 
                     const data =
@@ -134,6 +197,21 @@ function StudentDashboard() {
 
                     setApplications(
                         data.applications || []
+                    );
+                }
+
+
+                // ==========================================
+                // COURSE RECOMMENDATIONS
+                // ==========================================
+
+                if (coursesResponse.ok) {
+
+                    const data =
+                        await coursesResponse.json();
+
+                    setCourseRecommendations(
+                        data.recommendations || []
                     );
                 }
 
@@ -308,7 +386,9 @@ function StudentDashboard() {
             <div className="dashboard-two-column">
 
 
-                {/* SKILLS */}
+                {/* ======================================
+                    SKILLS
+                ====================================== */}
 
                 <div className="dashboard-card">
 
@@ -433,7 +513,9 @@ function StudentDashboard() {
                 </div>
 
 
-                {/* OPPORTUNITIES */}
+                {/* ======================================
+                    OPPORTUNITIES
+                ====================================== */}
 
                 <div className="dashboard-card">
 
@@ -547,6 +629,130 @@ function StudentDashboard() {
 
 
             {/* ======================================
+                RECOMMENDED COURSES
+            ====================================== */}
+
+            <div className="dashboard-card">
+
+                <div className="card-header">
+
+                    <div>
+
+                        <div className="card-title">
+                            Recommended Courses
+                        </div>
+
+                        <div className="card-description">
+                            Courses selected based on your skill gaps
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div className="card-body">
+
+                    {loading ? (
+
+                        <div className="empty-state">
+                            Loading course recommendations...
+                        </div>
+
+                    ) : courseRecommendations.length > 0 ? (
+
+                        <div className="opportunity-list">
+
+                            {courseRecommendations
+                                .slice(0, 6)
+                                .map((course) => (
+
+                                    <div
+                                        className="opportunity-item"
+                                        key={`${course.course_id}-${course.skill_id}`}
+                                    >
+
+                                        <div className="opportunity-icon">
+                                            📚
+                                        </div>
+
+
+                                        <div className="opportunity-info">
+
+                                            <strong>
+                                                {course.title}
+                                            </strong>
+
+                                            <span>
+                                                Improve: {course.skill_name}
+                                                {" • "}
+                                                Current score: {course.score}%
+                                                {" • "}
+                                                Gap: {course.skill_gap}%
+                                            </span>
+
+                                        </div>
+
+
+                                        <div>
+
+                                            <div
+                                                className="match-badge"
+                                                style={{
+                                                    marginBottom: "8px"
+                                                }}
+                                            >
+                                                {course.priority}
+                                            </div>
+
+
+                                            {course.url && (
+
+                                                <a
+                                                    href={course.url}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="text-button"
+                                                >
+                                                    View Course →
+                                                </a>
+
+                                            )}
+
+                                        </div>
+
+                                    </div>
+
+                                ))}
+
+                        </div>
+
+                    ) : (
+
+                        <div className="empty-state">
+
+                            <div className="empty-icon">
+                                🎯
+                            </div>
+
+                            <strong>
+                                No course recommendations
+                            </strong>
+
+                            <span>
+                                Complete your assessment or improve your current skills to receive course recommendations.
+                            </span>
+
+                        </div>
+
+                    )}
+
+                </div>
+
+            </div>
+
+
+            {/* ======================================
                 APPLICATIONS
             ====================================== */}
 
@@ -601,11 +807,15 @@ function StudentDashboard() {
                                         <div>
 
                                             <strong>
-                                                {application.job?.title}
+                                                {application.job?.title ||
+                                                    application.title ||
+                                                    "Opportunity"}
                                             </strong>
 
                                             <span>
-                                                {application.job?.industry_name}
+                                                {application.job?.industry_name ||
+                                                    application.industry_name ||
+                                                    ""}
                                             </span>
 
                                         </div>
@@ -613,8 +823,9 @@ function StudentDashboard() {
 
                                         <div className="application-match">
 
-                                            {application.match_score}%
-                                            match
+                                            {application.match_score
+                                                ? `${application.match_score}% match`
+                                                : "Applied"}
 
                                         </div>
 
@@ -666,6 +877,7 @@ function StudentDashboard() {
                 </div>
 
             </div>
+
 
         </DashboardLayout>
     );
