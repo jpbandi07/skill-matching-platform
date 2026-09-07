@@ -3392,6 +3392,1842 @@
         grid-template-columns: 1fr !important;
     }
 }
+/* =========================================================
+   SKILLBRIDGE - STUDENT DASHBOARD POLISH
+   Final UI improvement
+========================================================= */
+
+
+/* =========================================================
+   STUDENT DASHBOARD BASE
+========================================================= */
+
+.dashboard-page {
+    background:
+        radial-gradient(
+            circle at 75% 0%,
+            rgba(86, 101, 220, .08),
+            transparent 35%
+        ),
+        #080c16;
+}
+
+.dashboard-content {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   WELCOME SECTION
+========================================================= */
+
+.dashboard-welcome {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    margin-bottom: 24px;
+    padding: 28px 30px;
+
+    border: 1px solid rgba(255,255,255,.07);
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(28,34,54,.95),
+            rgba(16,21,34,.95)
+        );
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.16);
+}
+
+.dashboard-welcome h2 {
+    margin: 5px 0 8px;
+
+    color: #f0f2f7;
+
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -.7px;
+}
+
+.dashboard-welcome p {
+    margin: 0;
+
+    max-width: 650px;
+
+    color: #77829a;
+
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.welcome-eyebrow {
+    color: #7282ff;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 1.6px;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
+.primary-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 42px;
+
+    padding: 0 18px;
+
+    border: 1px solid rgba(119,135,255,.35);
+    border-radius: 10px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6374f4,
+            #5365dc
+        );
+
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(82,99,220,.18);
+
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease,
+        filter .18s ease;
+}
+
+.primary-button:hover {
+    transform: translateY(-2px);
+
+    filter: brightness(1.08);
+
+    box-shadow:
+        0 12px 28px rgba(82,99,220,.25);
+}
+
+
+/* =========================================================
+   DASHBOARD STATS
+========================================================= */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 15px;
+
+    margin-bottom: 22px;
+}
+
+.stat-card {
+    position: relative;
+
+    min-height: 135px;
+
+    padding: 23px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255,255,255,.07);
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(27,33,51,.95),
+            rgba(16,21,33,.95)
+        );
+
+    transition:
+        transform .18s ease,
+        border-color .18s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+
+    border-color:
+        rgba(104,120,255,.22);
+}
+
+.stat-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    right: -40px;
+    top: -40px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(91,105,247,.08);
+}
+
+.stat-label {
+    position: relative;
+    z-index: 1;
+
+    color: #6d7891;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.stat-value {
+    position: relative;
+    z-index: 1;
+
+    margin-top: 14px;
+
+    color: #edf0f7;
+
+    font-size: 31px;
+    font-weight: 750;
+
+    letter-spacing: -1px;
+}
+
+.stat-change {
+    position: relative;
+    z-index: 1;
+
+    margin-top: 9px;
+
+    color: #6374e8;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   DASHBOARD CARDS
+========================================================= */
+
+.dashboard-card {
+    margin-bottom: 20px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255,255,255,.07);
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(22,27,42,.97),
+            rgba(14,19,31,.97)
+        );
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.12);
+}
+
+.card-header {
+    min-height: 76px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 19px 27px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.065);
+}
+
+.card-title {
+    color: #e9ecf4;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    letter-spacing: -.2px;
+}
+
+.card-description {
+    margin-top: 5px;
+
+    color: #69758e;
+
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.card-body {
+    padding: 25px 27px;
+}
+
+.text-button {
+    border: none;
+
+    color: #8795ff;
+
+    background: transparent;
+
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: color .15s ease;
+}
+
+.text-button:hover {
+    color: #b0b9ff;
+}
+
+
+/* =========================================================
+   RECOMMENDED OPPORTUNITIES
+========================================================= */
+
+.opportunity-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+.opportunity-item {
+    display: grid;
+
+    grid-template-columns:
+        42px minmax(0, 1fr) auto;
+
+    align-items: center;
+
+    gap: 13px;
+
+    min-height: 64px;
+
+    padding: 10px 13px;
+
+    border: 1px solid rgba(255,255,255,.055);
+
+    border-radius: 12px;
+
+    background:
+        rgba(34,40,58,.42);
+
+    transition:
+        background .18s ease,
+        border-color .18s ease,
+        transform .18s ease;
+}
+
+.opportunity-item:hover {
+    transform: translateX(2px);
+
+    border-color:
+        rgba(102,119,255,.22);
+
+    background:
+        rgba(52,59,82,.46);
+}
+
+.opportunity-icon {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    color: #8291ff;
+
+    background:
+        rgba(91,105,247,.11);
+
+    border:
+        1px solid rgba(91,105,247,.13);
+
+    font-size: 12px;
+}
+
+.opportunity-info {
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.opportunity-info strong {
+    overflow: hidden;
+
+    color: #dce1ec;
+
+    font-size: 12px;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.opportunity-info span {
+    color: #68738a;
+
+    font-size: 9px;
+}
+
+.match-badge {
+    min-width: 55px;
+
+    padding: 7px 9px;
+
+    border-radius: 8px;
+
+    color: #8190ff;
+
+    background:
+        rgba(91,105,247,.10);
+
+    border:
+        1px solid rgba(91,105,247,.14);
+
+    text-align: center;
+
+    font-size: 10px;
+    font-weight: 750;
+}
+
+
+/* =========================================================
+   RECOMMENDED COURSES
+========================================================= */
+
+.course-recommendations {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+.course-recommendation-card {
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 190px;
+
+    padding: 20px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255,255,255,.065);
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(31,37,57,.95),
+            rgba(17,22,35,.95)
+        );
+
+    transition:
+        transform .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+.course-recommendation-card:hover {
+    transform: translateY(-3px);
+
+    border-color:
+        rgba(101,119,255,.28);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.20);
+}
+
+.course-recommendation-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 80px;
+    height: 80px;
+
+    top: -35px;
+    right: -30px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(99,117,255,.08);
+}
+
+.course-icon {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 13px;
+
+    border-radius: 11px;
+
+    color: #8795ff;
+
+    background:
+        rgba(91,105,247,.11);
+
+    border:
+        1px solid rgba(91,105,247,.14);
+
+    font-size: 17px;
+}
+
+.course-recommendation-card h3 {
+    margin: 0 0 7px;
+
+    color: #edf0f6;
+
+    font-size: 14px;
+    line-height: 1.35;
+
+    letter-spacing: -.2px;
+}
+
+.course-recommendation-card p {
+    margin: 0;
+
+    color: #778199;
+
+    font-size: 10px;
+
+    line-height: 1.55;
+}
+
+.course-skill-info {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 14px;
+}
+
+.course-skill-info span {
+    padding: 6px 8px;
+
+    border-radius: 7px;
+
+    color: #858fa7;
+
+    background:
+        rgba(255,255,255,.035);
+
+    font-size: 8px;
+}
+
+.course-priority {
+    margin-top: 10px;
+
+    width: fit-content;
+
+    padding: 5px 8px;
+
+    border-radius: 6px;
+
+    color: #e1a261;
+
+    background:
+        rgba(214,155,85,.09);
+
+    border:
+        1px solid rgba(214,155,85,.13);
+
+    font-size: 8px;
+    font-weight: 750;
+
+    text-transform: uppercase;
+
+    letter-spacing: .7px;
+}
+
+.course-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    width: fit-content;
+
+    margin-top: auto;
+    padding-top: 16px;
+
+    color: #8291ff;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        color .15s ease,
+        transform .15s ease;
+}
+
+.course-link:hover {
+    color: #b0b9ff;
+
+    transform: translateX(2px);
+}
+
+
+/* =========================================================
+   COURSE EMPTY STATE
+========================================================= */
+
+.course-empty-state {
+    min-height: 145px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 25px;
+
+    text-align: center;
+}
+
+.course-empty-state .empty-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 4px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(91,105,247,.09);
+
+    color: #8190ff;
+
+    font-size: 18px;
+}
+
+.course-empty-state strong {
+    color: #e3e7f0;
+
+    font-size: 13px;
+}
+
+.course-empty-state span {
+    max-width: 450px;
+
+    color: #717c93;
+
+    font-size: 10px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   RECENT APPLICATIONS
+========================================================= */
+
+.application-card .card-body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.application-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.application-item {
+    display: grid;
+
+    grid-template-columns:
+        42px minmax(0, 1fr) auto;
+
+    align-items: center;
+
+    gap: 13px;
+
+    min-height: 62px;
+
+    padding: 10px 13px;
+
+    border: 1px solid rgba(255,255,255,.05);
+
+    border-radius: 11px;
+
+    background:
+        rgba(34,40,58,.35);
+}
+
+.application-item:hover {
+    background:
+        rgba(44,51,71,.45);
+}
+
+.application-icon {
+    width: 39px;
+    height: 39px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    color: #7e8cff;
+
+    background:
+        rgba(91,105,247,.09);
+}
+
+.application-info {
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.application-info strong {
+    overflow: hidden;
+
+    color: #dce1ea;
+
+    font-size: 11px;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.application-info span {
+    color: #68738a;
+
+    font-size: 9px;
+}
+
+.application-status {
+    padding: 6px 9px;
+
+    border-radius: 7px;
+
+    color: #79cba9;
+
+    background:
+        rgba(55,202,151,.08);
+
+    border:
+        1px solid rgba(55,202,151,.11);
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    text-transform: capitalize;
+}
+
+
+/* =========================================================
+   EMPTY STATES
+========================================================= */
+
+.empty-state {
+    min-height: 135px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 25px;
+
+    text-align: center;
+}
+
+.empty-state .empty-icon {
+    color: #7584ff;
+
+    font-size: 20px;
+
+    margin-bottom: 2px;
+}
+
+.empty-state strong {
+    display: block;
+
+    color: #e2e6ef;
+
+    font-size: 13px;
+}
+
+.empty-state span {
+    display: block;
+
+    max-width: 500px;
+
+    color: #707b92;
+
+    font-size: 10px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   OPPORTUNITIES PAGE
+========================================================= */
+
+.opportunities-grid {
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 17px;
+}
+
+.opportunity-card {
+    transition:
+        transform .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+.opportunity-card:hover {
+    transform: translateY(-4px);
+
+    border-color:
+        rgba(101,119,255,.25);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.20);
+}
+
+
+/* =========================================================
+   FORM POLISH
+========================================================= */
+
+input,
+textarea,
+select,
+button {
+    font-family: inherit;
+}
+
+input,
+textarea,
+select {
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #090d17;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+
+    background: #2d3548;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #414b68;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .course-recommendations {
+        grid-template-columns: 1fr;
+    }
+
+    .opportunities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+@media (max-width: 760px) {
+
+    .dashboard-welcome {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        padding: 22px;
+    }
+
+    .dashboard-welcome .primary-button {
+        width: 100%;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-header {
+        padding: 17px 19px;
+    }
+
+    .card-body {
+        padding: 19px;
+    }
+
+    .course-recommendation-card {
+        min-height: 175px;
+    }
+}
+
+
+@media (max-width: 520px) {
+
+    .dashboard-welcome h2 {
+        font-size: 22px;
+    }
+
+    .opportunity-item {
+        grid-template-columns:
+            38px minmax(0, 1fr);
+    }
+
+    .opportunity-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .match-badge {
+        grid-column: 2;
+
+        width: fit-content;
+    }
+
+    .application-item {
+        grid-template-columns:
+            38px minmax(0, 1fr);
+    }
+
+    .application-status {
+        grid-column: 2;
+
+        width: fit-content;
+    }
+
+    .card-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .card-header .text-button {
+        align-self: flex-start;
+    }
+}
+/* =========================================================
+   SKILLBRIDGE INDUSTRY - POST OPPORTUNITY
+   CLEAN PROFESSIONAL FORM
+========================================================= */
+
+
+/* =========================================================
+   MAIN FORM CONTAINER
+========================================================= */
+
+.job-form-container {
+    width: 100% !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    gap: 20px !important;
+
+    margin: 0 auto !important;
+}
+
+
+/* =========================================================
+   DASHBOARD CONTENT WIDTH
+========================================================= */
+
+.job-form-container .dashboard-card {
+    width: 100% !important;
+
+    box-sizing: border-box !important;
+
+    margin: 0 !important;
+
+    border:
+        1px solid rgba(255,255,255,.07) !important;
+
+    border-radius: 18px !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            #171c29,
+            #111621
+        ) !important;
+
+    overflow: hidden !important;
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.15) !important;
+}
+
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.job-form-container .card-header {
+    min-height: 78px !important;
+
+    box-sizing: border-box !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    padding: 20px 28px !important;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.065) !important;
+}
+
+.job-form-container .card-title {
+    color: #eef1f7 !important;
+
+    font-size: 16px !important;
+
+    font-weight: 700 !important;
+
+    letter-spacing: -.3px !important;
+}
+
+.job-form-container .card-description {
+    margin-top: 5px !important;
+
+    color: #717c94 !important;
+
+    font-size: 10px !important;
+
+    line-height: 1.5 !important;
+}
+
+
+/* =========================================================
+   CARD BODY
+========================================================= */
+
+.job-form-container .card-body {
+    box-sizing: border-box !important;
+
+    padding: 30px !important;
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.job-form-container .form-grid {
+    width: 100% !important;
+
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr)) !important;
+
+    gap: 22px 20px !important;
+
+    align-items: start !important;
+}
+
+
+/* =========================================================
+   FORM FIELD
+========================================================= */
+
+.job-form-container .form-field {
+    width: 100% !important;
+
+    min-width: 0 !important;
+
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    gap: 8px !important;
+
+    margin: 0 !important;
+}
+
+
+/* Full width fields */
+
+.job-form-container .form-field.full {
+    grid-column: 1 / -1 !important;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.job-form-container .form-field label {
+    display: block !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+
+    color: #b9c1cf !important;
+
+    font-size: 11px !important;
+
+    font-weight: 650 !important;
+
+    line-height: 1.4 !important;
+}
+
+
+/* =========================================================
+   INPUT / SELECT / TEXTAREA
+========================================================= */
+
+.job-form-container .form-field input,
+.job-form-container .form-field select,
+.job-form-container .form-field textarea {
+
+    width: 100% !important;
+
+    box-sizing: border-box !important;
+
+    margin: 0 !important;
+
+    border:
+        1px solid #343b4a !important;
+
+    border-radius: 11px !important;
+
+    outline: none !important;
+
+    color: #edf0f5 !important;
+
+    background:
+        #202631 !important;
+
+    font-family: inherit !important;
+
+    font-size: 12px !important;
+
+    transition:
+        border-color .18s ease,
+        background .18s ease,
+        box-shadow .18s ease !important;
+}
+
+
+/* =========================================================
+   TEXT INPUTS
+========================================================= */
+
+.job-form-container .form-field input,
+.job-form-container .form-field select {
+
+    height: 50px !important;
+
+    padding:
+        0 15px !important;
+}
+
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+
+.job-form-container .form-field textarea {
+
+    min-height: 155px !important;
+
+    padding:
+        14px 15px !important;
+
+    resize: vertical !important;
+
+    line-height: 1.6 !important;
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
+
+.job-form-container .form-field input::placeholder,
+.job-form-container .form-field textarea::placeholder {
+
+    color: #68738a !important;
+
+    opacity: 1 !important;
+}
+
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.job-form-container .form-field input:focus,
+.job-form-container .form-field select:focus,
+.job-form-container .form-field textarea:focus {
+
+    border-color:
+        #6575f4 !important;
+
+    background:
+        #252b37 !important;
+
+    box-shadow:
+        0 0 0 3px rgba(101,117,244,.10) !important;
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+.job-form-container .form-field select {
+
+    cursor: pointer !important;
+}
+
+.job-form-container .form-field select option {
+
+    color: #ffffff !important;
+
+    background: #171c26 !important;
+}
+
+
+/* =========================================================
+   REQUIRED SKILLS GRID
+========================================================= */
+
+.job-form-container .required-skills-grid {
+
+    width: 100% !important;
+
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr)) !important;
+
+    gap: 12px !important;
+
+    margin: 0 !important;
+}
+
+
+/* =========================================================
+   REQUIRED SKILL ITEM
+========================================================= */
+
+.job-form-container .required-skill-item {
+
+    width: 100% !important;
+
+    min-height: 66px !important;
+
+    box-sizing: border-box !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    gap: 12px !important;
+
+    padding:
+        9px 11px !important;
+
+    border:
+        1px solid #303746 !important;
+
+    border-radius: 12px !important;
+
+    background:
+        #1d222e !important;
+
+    transition:
+        border-color .18s ease,
+        background .18s ease,
+        transform .18s ease,
+        box-shadow .18s ease !important;
+}
+
+
+/* Hover */
+
+.job-form-container .required-skill-item:hover {
+
+    border-color:
+        rgba(101,117,244,.35) !important;
+
+    background:
+        #222834 !important;
+
+    transform:
+        translateY(-1px) !important;
+}
+
+
+/* Selected */
+
+.job-form-container .required-skill-item.selected {
+
+    border-color:
+        rgba(101,117,244,.55) !important;
+
+    background:
+        rgba(101,117,244,.08) !important;
+
+    box-shadow:
+        inset 3px 0 0 #6575f4 !important;
+}
+
+
+/* =========================================================
+   SKILL BUTTON
+========================================================= */
+
+.job-form-container .skill-select-button {
+
+    flex: 1 !important;
+
+    min-width: 0 !important;
+
+    min-height: 46px !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    gap: 10px !important;
+
+    padding:
+        0 10px !important;
+
+    border: none !important;
+
+    border-radius: 9px !important;
+
+    color: #cbd1dc !important;
+
+    background:
+        transparent !important;
+
+    font-family: inherit !important;
+
+    font-size: 11px !important;
+
+    font-weight: 650 !important;
+
+    text-align: left !important;
+
+    cursor: pointer !important;
+
+    box-shadow: none !important;
+
+    transition:
+        color .15s ease,
+        background .15s ease !important;
+}
+
+
+/* Hover */
+
+.job-form-container .skill-select-button:hover {
+
+    color: #f0f2f7 !important;
+
+    background:
+        rgba(255,255,255,.035) !important;
+}
+
+
+/* Selected */
+
+.job-form-container
+.required-skill-item.selected
+.skill-select-button {
+
+    color: #eef1f7 !important;
+}
+
+
+/* =========================================================
+   SKILL CHECK
+========================================================= */
+
+.job-form-container .skill-select-check {
+
+    width: 22px !important;
+
+    height: 22px !important;
+
+    flex-shrink: 0 !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    border:
+        1px solid #41495a !important;
+
+    border-radius: 6px !important;
+
+    color: transparent !important;
+
+    background:
+        #171c26 !important;
+
+    font-size: 12px !important;
+
+    font-weight: 800 !important;
+
+    transition:
+        background .15s ease,
+        border-color .15s ease,
+        color .15s ease !important;
+}
+
+
+/* Checked */
+
+.job-form-container
+.required-skill-item.selected
+.skill-select-check {
+
+    border-color:
+        #6575f4 !important;
+
+    color: #ffffff !important;
+
+    background:
+        #6575f4 !important;
+}
+
+
+/* =========================================================
+   PROFICIENCY SELECT
+========================================================= */
+
+.job-form-container
+.required-skill-item
+select {
+
+    width: 95px !important;
+
+    height: 36px !important;
+
+    flex-shrink: 0 !important;
+
+    box-sizing: border-box !important;
+
+    padding:
+        0 8px !important;
+
+    border:
+        1px solid #394152 !important;
+
+    border-radius: 8px !important;
+
+    color: #cbd1dc !important;
+
+    background:
+        #252a35 !important;
+
+    font-family: inherit !important;
+
+    font-size: 9px !important;
+
+    outline: none !important;
+
+    cursor: pointer !important;
+}
+
+.job-form-container
+.required-skill-item
+select:focus {
+
+    border-color:
+        #6575f4 !important;
+}
+
+
+/* =========================================================
+   SELECTED COUNT
+========================================================= */
+
+.job-form-container .selected-skills-count {
+
+    display: inline-flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    min-width: 70px !important;
+
+    padding:
+        7px 10px !important;
+
+    border:
+        1px solid rgba(101,117,244,.15) !important;
+
+    border-radius: 8px !important;
+
+    color: #8d9aff !important;
+
+    background:
+        rgba(101,117,244,.08) !important;
+
+    font-size: 10px !important;
+
+    font-weight: 700 !important;
+}
+
+
+/* =========================================================
+   FORM MESSAGE
+========================================================= */
+
+.job-form-container .success-message,
+.job-form-container .error-message {
+
+    width: 100% !important;
+
+    box-sizing: border-box !important;
+
+    padding:
+        13px 16px !important;
+
+    border-radius: 10px !important;
+
+    font-size: 10px !important;
+
+    line-height: 1.5 !important;
+}
+
+.job-form-container .success-message {
+
+    border:
+        1px solid rgba(63,201,151,.20) !important;
+
+    color: #76d4b0 !important;
+
+    background:
+        rgba(63,201,151,.07) !important;
+}
+
+.job-form-container .error-message {
+
+    border:
+        1px solid rgba(232,95,95,.20) !important;
+
+    color: #e99a9a !important;
+
+    background:
+        rgba(232,95,95,.07) !important;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.job-form-actions {
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: flex-end !important;
+
+    gap: 10px !important;
+
+    width: 100% !important;
+
+    margin-top: 2px !important;
+}
+
+
+/* =========================================================
+   SECONDARY BUTTON
+========================================================= */
+
+.job-form-actions .secondary-button {
+
+    min-height: 45px !important;
+
+    padding:
+        0 18px !important;
+
+    border:
+        1px solid #343c4b !important;
+
+    border-radius: 10px !important;
+
+    color: #a8afbd !important;
+
+    background:
+        #171c26 !important;
+
+    font-family: inherit !important;
+
+    font-size: 10px !important;
+
+    font-weight: 700 !important;
+
+    cursor: pointer !important;
+
+    transition:
+        background .18s ease,
+        border-color .18s ease,
+        color .18s ease !important;
+}
+
+.job-form-actions .secondary-button:hover {
+
+    color: #e2e6ee !important;
+
+    border-color:
+        #4a5365 !important;
+
+    background:
+        #222834 !important;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
+.job-form-actions .primary-button {
+
+    min-height: 45px !important;
+
+    padding:
+        0 22px !important;
+
+    border:
+        1px solid #6575f4 !important;
+
+    border-radius: 10px !important;
+
+    color: #ffffff !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6878f7,
+            #5365e0
+        ) !important;
+
+    font-family: inherit !important;
+
+    font-size: 10px !important;
+
+    font-weight: 750 !important;
+
+    cursor: pointer !important;
+
+    box-shadow:
+        0 8px 22px rgba(83,101,224,.18) !important;
+
+    transition:
+        transform .18s ease,
+        filter .18s ease,
+        box-shadow .18s ease !important;
+}
+
+.job-form-actions .primary-button:hover {
+
+    transform:
+        translateY(-2px) !important;
+
+    filter:
+        brightness(1.08) !important;
+
+    box-shadow:
+        0 12px 28px rgba(83,101,224,.26) !important;
+}
+
+.job-form-actions .primary-button:disabled {
+
+    opacity: .55 !important;
+
+    cursor: not-allowed !important;
+
+    transform: none !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .job-form-container .form-grid {
+
+        grid-template-columns: 1fr !important;
+    }
+
+    .job-form-container .form-field.full {
+
+        grid-column: auto !important;
+    }
+
+    .job-form-container .required-skills-grid {
+
+        grid-template-columns: 1fr !important;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .job-form-container .card-body {
+
+        padding: 20px !important;
+    }
+
+    .job-form-container .card-header {
+
+        padding:
+            18px 20px !important;
+    }
+
+    .job-form-container .required-skill-item {
+
+        min-height: 60px !important;
+    }
+
+    .job-form-container
+    .required-skill-item
+    select {
+
+        width: 82px !important;
+    }
+
+    .job-form-actions {
+
+        flex-direction: column-reverse !important;
+
+        align-items: stretch !important;
+    }
+
+    .job-form-actions button {
+
+        width: 100% !important;
+    }
+}
 
 
 
